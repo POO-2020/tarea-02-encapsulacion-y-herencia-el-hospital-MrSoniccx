@@ -5,6 +5,7 @@ import Fecha from "./fecha.js"
 import Cita from "./cita.js"
 import Tiempo from "./tiempo.js"
 import Hospital from "./hospital.js"
+import PacienteAsegurado from "./pacienteAsegurado.js"
 
 class Main{//${this.}
 
@@ -19,6 +20,14 @@ class Main{//${this.}
             fechaNacimiento: new Fecha(new Date(2002,5,20)),
             telefono: "312-526-2456"
         }
+        let datosPacienteAsegurado = {
+            nombre: new Nombre("Leonardo","Isordia","Avila"),
+            fechaNacimiento: new Fecha(new Date(2009,7,11)),
+            telefono: "312-526-2456",
+            numeroPoliza: 1578,
+            fechaFinVigencia: new Fecha(new Date(2015,4,5)),
+            compañia: "Telcel"
+        }
         let datosDoct = {
             nombre: this.testGarcia,
             especialidad: "Oftalmologia",
@@ -28,7 +37,7 @@ class Main{//${this.}
 
         this.paciente = new Paciente(datosPaciente)
         this.testDoct = new Doctor(datosDoct)
-
+        this.pacienteAsegurado = new PacienteAsegurado(datosPacienteAsegurado)
         let datosCita = {
             fecha: new Fecha(new Date(2002,5,20)),
             hora: this.testTiempo,
@@ -53,6 +62,8 @@ class Main{//${this.}
 
     testPac(){
         console.log(this.paciente.getPerfil())
+        //testPaciente Asegurado
+        console.log(this.pacienteAsegurado.getPerfil())
     }
     testCita(){
         console.log(this.testCitaa.getCita())

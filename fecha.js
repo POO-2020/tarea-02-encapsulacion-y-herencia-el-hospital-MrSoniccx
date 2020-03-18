@@ -11,7 +11,7 @@ export default class Fecha {
      getSemanas(){return (this._años*12*4)}
      getDias(){return (this._años*12*4*7)}
      getFecha(){
-         return (`${this._fecha.getDate()}/${this._fecha.getMonth()}/${this.fecha.getFullYear()}`)
+         return (`${this._fecha.getDate()}/${this._fecha.getMonth()}/${this._fecha.getFullYear()}`)
         }
      getDiaFecha(){
         let dia = this._fecha.getDay()
