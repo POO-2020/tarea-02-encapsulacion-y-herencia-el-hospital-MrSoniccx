@@ -11,11 +11,32 @@ class Main{//${this.}
     constructor(){
         this.testPepe = new Nombre("Pepe","Hernandez","Rodrigo")
         this.testGarcia = new Nombre("Garcia", "Correas", "Flores")
-        this.testDoct = new Doctor(this.testGarcia,"Oftalmologia","312-457-3641","105413587")
-        this.paciente = new Paciente(this.testPepe,new Fecha(new Date(2002,5,20)),"312-526-2456")
         this.testTiempo = new Tiempo(7,53,"pm")
-        this.testCitaa = new Cita (new Fecha(new Date(2002,5,20)),this.testTiempo,this.testDoct,this.paciente)
         this.testHosp = new Hospital("Hospital Chido", "Calle manzanas, Num #674")
+
+        let datosPaciente = {
+            nombre: this.testPepe,
+            fechaNacimiento: new Fecha(new Date(2002,5,20)),
+            telefono: "312-526-2456"
+        }
+        let datosDoct = {
+            nombre: this.testGarcia,
+            especialidad: "Oftalmologia",
+            telefono: "312-457-3641",
+            cedula: "105413587"
+        }
+
+        this.paciente = new Paciente(datosPaciente)
+        this.testDoct = new Doctor(datosDoct)
+
+        let datosCita = {
+            fecha: new Fecha(new Date(2002,5,20)),
+            hora: this.testTiempo,
+            doctor: this.testDoct,
+            paciente: this.paciente
+        }
+
+        this.testCitaa = new Cita(datosCita)
     }
 
     testNombre(){

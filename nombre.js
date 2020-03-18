@@ -1,23 +1,27 @@
 export default class Nombre{
     constructor(nombre,apellidoPaterno,apellidoMaterno)
     {
-        this.nombre = nombre
-        this.apellidoPaterno = apellidoPaterno
-        this.apellidoMaterno = apellidoMaterno
+        this._nombre = nombre
+        this._apellidoPaterno = apellidoPaterno
+        this._apellidoMaterno = apellidoMaterno
     }
 
     getNombreCompleto()
     {
-        return (`${this.nombre} ${this.apellidoPaterno} ${this.apellidoMaterno}`)
+        return (`${this._nombre} ${this._apellidoPaterno} ${this._apellidoMaterno}`)
     }
 
     getApellidoNombre()
     {
-        return (`${this.apellidoPaterno} ${this.apellidoMaterno} ${this.nombre}`)
+        return (`${this._apellidoPaterno} ${this._apellidoMaterno} ${this._nombre}`)
     }
 
     getIniciales()
     {
-        return  (`${this.nombre.charAt(0)}${this.apellidoPaterno.charAt(0)}${this.apellidoMaterno.charAt(0)}`)
+        return  (`${this._nombre.charAt(0)}${this._apellidoPaterno.charAt(0)}${this._apellidoMaterno.charAt(0)}`)
+    }
+
+    getApellidoPaterno(){
+        return this._apellidoPaterno
     }
 }

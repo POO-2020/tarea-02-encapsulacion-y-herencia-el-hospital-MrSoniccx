@@ -1,12 +1,16 @@
 export default class Paciente{
-    constructor(nombre, fechaNacimiento, telefono)
+    constructor({nombre, fechaNacimiento, telefono})
     {
-        this.nombre = nombre
-        this.fechaNacimiento = fechaNacimiento
-        this.telefono = telefono
+        this._nombre = nombre
+        this._fechaNacimiento = fechaNacimiento
+        this._telefono = telefono
     }
 
     getPerfil(){
-        return (`${this.nombre.getNombreCompleto()}, ${this.fechaNacimiento.getFecha()}, ${this.telefono}`)
+        return (`${this._nombre.getNombreCompleto()}, ${this._fechaNacimiento.getFecha()}, ${this._telefono}`)
+    }
+
+    getNombreCompleto(){
+        return this._nombre.getNombreCompleto()
     }
 }
