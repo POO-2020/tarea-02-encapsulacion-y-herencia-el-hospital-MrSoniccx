@@ -16,4 +16,13 @@ export default class Doctor{
     getApellidoPaterno(){
         return this._nombre.getApellidoPaterno()
     }
+
+    _esIgualA(doc){
+        if(doc._getCedula() == this._cedula){ return true}
+        else {return false}
+    }
+
+    _getCedula(){
+        return this._cedula
+    }
 }

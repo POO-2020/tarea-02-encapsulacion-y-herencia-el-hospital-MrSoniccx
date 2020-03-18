@@ -13,7 +13,6 @@ class Main{//${this.}
         this.testPepe = new Nombre("Pepe","Hernandez","Rodrigo")
         this.testGarcia = new Nombre("Garcia", "Correas", "Flores")
         this.testTiempo = new Tiempo(7,53,"pm")
-        this.testHosp = new Hospital("Hospital Chido", "Calle manzanas, Num #674")
 
         let datosPaciente = {
             nombre: this.testPepe,
@@ -34,10 +33,15 @@ class Main{//${this.}
             telefono: "312-457-3641",
             cedula: "105413587"
         }
-
+        let datosHospital = {
+            nombre: "Hospital Chido",
+            direccion: "Calle manzanas, Num #674"
+        }
+        this.testHosp = new Hospital(datosHospital)
         this.paciente = new Paciente(datosPaciente)
         this.testDoct = new Doctor(datosDoct)
         this.pacienteAsegurado = new PacienteAsegurado(datosPacienteAsegurado)
+
         let datosCita = {
             fecha: new Fecha(new Date(2002,5,20)),
             hora: this.testTiempo,
@@ -70,12 +74,34 @@ class Main{//${this.}
     }
 
     testHospital(){
+        //tests 1
+        console.log(this.testHosp.buscarDoctor(this.testDoct))
+        console.log(this.testHosp.buscarCita(this.testCitaa))
+        console.log(this.testHosp.eliminarDoctor(this.testDoct))
+        console.log(this.testHosp.eliminarCita(this.testCitaa))
+
         this.testHosp.registrarDoctor(this.testDoct)
         this.testHosp.registrarCita(this.testCitaa)
 
+        //tests 2
+        console.log(this.testHosp.buscarDoctor(this.testDoct))
+        console.log(this.testHosp.buscarCita(this.testCitaa))
+        console.log(this.testHosp.eliminarDoctor(this.testDoct))
+        console.log(this.testHosp.eliminarCita(this.testCitaa))
+
         this.testHosp.listarDoctores()
         this.testHosp.listarCitas()
-        
+
+        //tests 3
+        console.log(this.testHosp.registrarDoctor(this.testDoct))
+        console.log(this.testHosp.registrarCita(this.testCitaa))
+        console.log(this.testHosp.registrarDoctor(this.testDoct))
+        console.log(this.testHosp.registrarCita(this.testCitaa))
+
+        console.log(this.testHosp.modificarDoctor(this.testDoct, this.testDoct))
+        console.log(this.testHosp.modificarCita(this.testCitaa, this.testCitaa))
+        this.testHosp.listarDoctores()
+        this.testHosp.listarCitas()
     }
 }
 

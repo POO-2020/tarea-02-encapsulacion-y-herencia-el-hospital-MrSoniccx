@@ -11,4 +11,9 @@ export default class Cita{
     {
         return(`${this._fecha.getFecha()}, ${this._hora.getFormato24()}, Dr. ${this._doctor.getApellidoPaterno()} , ${this._paciente.getNombreCompleto()}`)
     }
+
+    _esIgualA(cita){
+        if(cita == this){ return true}
+        else {return false}
+    }
 }
